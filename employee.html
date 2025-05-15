@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee{
+            constructor(name, position){
+                this.name = name;
+                this.position = position;
+            }
+
+            work(){
+                console.log(`HI, My Name is ${this.name}. My Posisition is ${this.position}`)
+            }
+        }
+
+        const show = new Employee("Ruby", "CEO");
+        show.work();
+    </script>
+</body>
+</html>

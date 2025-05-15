@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek</title>
+</head>
+<body>
+    <script>
+        class project{
+            constructor(name, descrition){
+                this.name = name;
+                this.descrition = descrition;
+                this.tasks = [];
+            }
+
+            add(taskName){
+                const task = {name : taskName, complited : false};
+                this.tasks.push(task);
+            }
+
+            list(){
+                if(this.tasks.length > 0){
+                    console.log("Daftar Tugas");
+                    this.tasks.forEach(task => {
+                        console.log(`* ${task.name} (${task.complited ? "Done" : "NO"})`);
+                    })
+                } else {
+                    console.log("Data tidak ditemukan")
+                }
+            }
+
+            remove(taskName){
+                const index = this.tasks.findIndex(task => task.name === taskName);
+                if (index !== -1){
+                    this.tasks.splice(index, 1);
+                    console.log(`${taskName} berhasil dihapus`);
+                } else {
+                    console.log("Data tidak ada");
+                }
+            }
+
+            complited(taskName){
+                const task = this.tasks.find(task => task.name === taskName);
+                if(task){
+                    task.complited = true;                    
+                } else {
+                    console.log("Data tidak ditemukan")
+                }
+            }
+           
+        }
+
+        const myProject = new project("a", "b");
+        myProject.add("Mengetik");
+        myProject.add("Minum");
+        myProject.list();
+        myProject.add("MAsak");
+        myProject.complited("MAsak")
+        myProject.list();
+        myProject.remove("Minum");
+        myProject.list();
+       
+    </script>
+</body>
+</html>

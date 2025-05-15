@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+</head>
+<body>
+    <script>
+        class PaymentGateway{
+            constructor(paymentGateway){
+                this.paymentGateway = [];
+            }
+
+            addPayment(name){
+                this.paymentGateway.push(name);
+                //console.log("berhasil")
+            }
+
+            makePayment(name, amount){
+                if (this.paymentGateway.includes(name)){
+                    console.log(`Pembayaran ${name} Berhasil senilai ${amount} `)
+                } else {
+                    console.log("TRansaksi gagal");
+                }
+            }
+        }
+
+        const myPayment = new PaymentGateway("nurul");
+        myPayment.addPayment("Cash");
+        myPayment.makePayment("Tunai", 3000)
+    </script>
+</body>
+</html>

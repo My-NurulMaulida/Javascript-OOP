@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+</head>
+<body>
+    <script>
+        class BankAccount{
+            constructor(owner, balance){
+                this.owner = owner;
+                this.balance = balance;
+            }
+
+            deposit(amount){
+                if(amount > 0){
+                    this.balance = this.balance + amount;
+                    console.log(`berhasil ditambah saldo anda : ${this.balance}`);
+                } else {
+                    console.log(`Data tidak dapat diproses`)
+                }
+            }
+
+            witDraw(amount){
+                if (amount > 0 && this.balance > amount) {
+                    this.balance = this.balance - amount;
+                    console.log(`Anda telah melakukan penarikan sejumlah ${amount}. Sisa saldo : ${this.balance}`);
+                } else if (this.balance < amount) {
+                    console.log(`Saldo tidak mencukupi`);
+                } else {
+                    console.log(`DAta tidak dapat di proses`);
+                }
+            }
+        }
+
+        const akun = new BankAccount ("Rosa", 10000);
+        akun.witDraw(200000);
+        akun.witDraw(200);
+        akun.deposit(250);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan</title>
+</head>
+<body>
+    <script>
+        class Player{
+            constructor(name, health){
+                this.name = name;
+                this.health = health;
+            }
+
+            menyerang(musuh, demage){
+                if (musuh.health > 0){
+                    musuh.health -= demage;
+                    console.log(`${musuh.name} diserang kekuatan ${demage} kekuatan musuh sekarang ${musuh.health}`)
+                } else {
+                    console.log("ANda Kalah")
+                }
+            }
+
+            bertahan(amount){
+                this.health += amount;
+                console.log(`${this.name} bertahan dengan health ${this.health}`);
+            }
+        }
+
+        // Contoh penggunaan
+        const player1 = new Player("Hero", 100);
+        const player2 = new Player("Villain", 80);
+
+        player1.menyerang(player2, 30); // Hero menyerang Villain
+        player2.bertahan(20);          // Villain bertahan dan memulihkan health
+        player2.menyerang(player1, 50); // Villain menyerang Hero
+        player1.menyerang(player2, 60); // Hero menyerang Villain kembali
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Calculator{
+            constructor(x, y){
+                this.x = x;
+                this.y = y;
+            }
+
+            penjumlahan(){
+                const hasil = this.x + this.y;
+                console.log(`Penjumlahan X + Y = ${hasil}`);
+            }
+
+            pengurangan(){
+                const hasil = this.x - this.y;
+                console.log(`Pengurangan X - Y = ${hasil}`);
+            }
+
+            perkalian(){
+                const hasil = this.x * this.y;
+                console.log(`Perkalian X * Y = ${hasil}`)
+            }
+
+            pembagian(){
+                const hasil = this.x / this.y;
+                console.log(`Pembagian X / Y = ${hasil}`);
+            }
+        }
+
+        const show = new Calculator(3,2);
+        show.penjumlahan();
+        show.pengurangan();
+        show.perkalian();
+        show.pembagian();
+    </script>
+</body>
+</html>

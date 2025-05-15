@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+</head>
+<body>
+    <script>
+        class Library{
+            constructor(name, location){
+                this.name = name;
+                this.location = location;
+                this.books = [];
+            }
+
+            add(book){
+                this.books.push(book);
+                //console.log(`${book} berhasil di tambahkan`);
+            }
+
+            list(book){
+                if(this.books.length > 0) {
+                    console.log("Daftar Buku");
+                    this.books.forEach((book) => {
+                        console.log(`* ${book}`)
+                    })
+                }
+            }
+
+            remove(book){
+                const index = this.books.indexOf(book);
+                if (index !== -1){
+                    console.log(`${book} berhasil di hapus`);
+                } else {
+                    console.log("TIdak Ada Data");
+                }
+            }
+
+            find(book){
+                if(this.books.includes(book)){
+                    console.log(`${book} ada di ${this.location}`);
+                } else {
+                    console.log("TIdak Ada Data");
+                }
+            }
+
+        }
+
+        const buku = new Library("BUKUKITA", "Central");
+        buku.add("Seni Bodo Amat");
+        buku.add("Bobo");
+        buku.add("Laskar pelangi");
+        buku.list();
+        buku.remove("Bobo");
+        buku.list();
+        buku.find("Laskar");
+        buku.find("laskar")
+    </script>
+</body>
+</html>
